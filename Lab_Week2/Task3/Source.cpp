@@ -3,7 +3,8 @@ using namespace std;
 
 int onlyzerosnofactorial(int n)
 {
-	return 0;
+	return 0; 
+	//I planned that you, Vlad, would code your part of job in this function.
 }
 
 void check(int amountof0, int n)
