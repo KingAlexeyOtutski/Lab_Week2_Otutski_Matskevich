@@ -5,10 +5,24 @@ using namespace std;
 
 const double Pi = 3.141592653589793115997963468544;
 
+double fact(int n)
+{
+	double s = 1.;
+	for (int i = 1; i <= n; i++)
+		s = s*i;
+	return s;
+}
+
 double oursin(double e, double x)
 {
-	return 0;
-	//I planned that you, Vlad, would code your part of job in this function.
+	double calc_sin = 0;
+	int i = 0;
+	while (abs(sin(Pi*x / 180) - calc_sin)* 1000000 > e * 1000000)
+	{
+		calc_sin += pow(-1, i) * (pow(x,2*i+1) / fact(2*i+1));
+		i++;
+	}
+	return calc_sin;
 }
 
 void check(double e, double x)
