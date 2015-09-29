@@ -1,10 +1,33 @@
 #include<iostream>
 using namespace std;
 
+
+int maxN(int n, int m)
+{
+	if (n > m)
+		return n;
+	else
+		return m;
+}
 int onlyzerosnofactorial(int n)
 {
-	return 0; 
-	//I planned that you, Vlad, would code your part of job in this function.
+	int a[1500];
+	int k = n;
+	for (int i = 1; i <= n; i++)
+	{
+		a[i] = i;
+	}
+	int nmbof5, nmbof2;
+	nmbof5 = 0;
+	nmbof2 = 0;
+		for (int i = 1; i < n; i++)
+		{
+			if (a[i] % 5 == 0)
+				nmbof5++;
+			if (a[i] % 2 == 0)
+				nmbof2++;
+		}
+		return maxN(nmbof2, nmbof5);
 }
 
 void check(int amountof0, int n)
